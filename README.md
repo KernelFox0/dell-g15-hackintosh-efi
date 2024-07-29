@@ -20,11 +20,11 @@ The Board Serial part gets copied to Generic -> MLB.
 The SmUUID part gets copied to Generic -> SystemUUID.
 
 You'll probably need to recreate some ACPI patches:
-- DMAR.aml
-- SSDT-HPET.aml
-- SSDT-XOSI.aml
+- DMAR.aml - **You 100% need to recreate this!** It needs to be recreated every time you change a hardware (Fix DMAR)
+- SSDT-HPET.aml (FixHPET)
+- SSDT-XOSI.aml (XOSI)
 
-Recreate them using [SSDTTime](https://github.com/corpnewt/SSDTTime).
+Recreate them using [SSDTTime](https://github.com/corpnewt/SSDTTime). Download, start, then first choose *Dump the current system's ACPI tables*. After that, choose the options in the brackets found in the list above! Then copy the files to EFI/OC/ACPI.
 
 If you don't have a thunderbolt controller, remove SSDT-TB3.aml from ACPI folder, and remove its entry from config.plist > ACPI > Add. It should be the 10th entry.
 
