@@ -28,7 +28,22 @@ Recreate them using [SSDTTime](https://github.com/corpnewt/SSDTTime). Download, 
 
 If you don't have a thunderbolt controller, remove SSDT-TB3.aml from ACPI folder, and remove its entry from config.plist > ACPI > Add. It should be the 10th entry.
 
+If you have an unsupported NVMe (for example SK Hynix PC711; you'll know because it causes a panic), add SSDT-DISABLE-NVME-SLOTX.aml (where X is the NVMe slot which the unsupported drive is in) from the Extras directory here to EFI > OC > ACPI and add it to config.plist > ACPI > Add. It will fully disable that drive in macOS. You 100% won't be able t use it in macOS!
+
 After installing macOS, set up [ComboJack](https://github.com/hackintosh-stuff/ComboJack).
 
 If you have any questions, first read through [Dortaina's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Also, you need to create a macOS Installer, and for that, refer to the same guide.   
 If you still have issues, don't hesitate to open an issue here.
+
+---
+### How to update macOS:
+
+**IMPORTANT: if you make any changes in config.plist, also make them in config_update.plist!**
+
+For minor updates, rename config.plist to config_normal.plist (or anything), then rename config_update.plist to config.plist. Then start the update process from System Settings.
+
+What this does is that it disables Apple Secure Boot and BlueToolFixup.kext, as these are known to cause issues while updating macOS.
+
+When there's a big update (like the upcoming Sonoma to Sequoia update), make sure to download the latest EFI from here (or update the kexts manually, you should do this regularly), then do the steps stated above, then without restarting (because of AirportItlwm having a different kext for every major release) start the update process. It will restart automatically.
+
+After an update you can (and should) rename the now config_normal.plist to config.plist then restart.
