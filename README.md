@@ -28,12 +28,17 @@ Recreate them using [SSDTTime](https://github.com/corpnewt/SSDTTime). Download, 
 
 If you don't have a thunderbolt controller, remove SSDT-TB3.aml from ACPI folder, and remove its entry from config.plist > ACPI > Add. It should be the 10th entry.
 
-If you have an unsupported NVMe (for example SK Hynix PC711; you'll know because it causes a panic), add SSDT-DISABLE-NVME-SLOTX.aml (where X is the NVMe slot which the unsupported drive is in) from the Extras directory here to EFI > OC > ACPI and add it to config.plist > ACPI > Add. It will fully disable that drive in macOS. You 100% won't be able t use it in macOS!
+If you have an unsupported NVMe (for example SK Hynix PC711; you'll know because it causes a panic), add SSDT-DISABLE-NVME-SLOTX.aml (where X is the NVMe slot which the unsupported drive is in) from the Extras/NVMe disable directory here to EFI > OC > ACPI and copy the corresponding Add value from the included patches.plist file in the directory to config.plist > ACPI > Add. It will fully disable that drive in macOS. You 100% won't be able to use it in macOS!
 
 After installing macOS, set up [ComboJack](https://github.com/hackintosh-stuff/ComboJack).
 
 If you have any questions, first read through [Dortaina's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Also, you need to create a macOS Installer, and for that, refer to the same guide.   
 If you still have issues, don't hesitate to open an issue here.
+
+---
+### Fixes:
+
+If your trackpad doesn't seem to work or even get detected, add the .aml files found in the Extras/Trackpad fix directory to EFI > OC > ACPI, and copy the Add and Patch values from the included patches.plist file in the directory to your config.plist file (ACPI > Add and ACPI > Patch).
 
 ---
 ### How to update macOS:

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACPI</key>
+	<dict>
+		<key>Add</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Turn off unsupported NVMe in slot 1</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-NVME-DISABLE-SLOT1.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Turn off unsupported NVMe in slot 2</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-NVME-DISABLE-SLOT2.aml</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
