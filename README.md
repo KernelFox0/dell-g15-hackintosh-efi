@@ -11,7 +11,7 @@ Made for Intel Core i7-10870H CPU, other 10th gens will probably work. 11th gen 
 
 The dGPU needs to be disabled. My laptop has an RTX 3060 GPU. The ACPI path might be different with other cards. Replace the ACPI path with yours in SSDT-dGPU-Off.aml.   
 
-If you have more than 16 GBs of RAM, enable the DisableIoMapperMapping quirk in config.plist > Kernel > Quirks
+If you have more than 16 GBs of RAM, enable the DisableIoMapperMapping quirk (**Not DisableIoMapper!**) in config.plist > Kernel > Quirks
 
 You'll need to generate new SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Use MacBookPro16,4 smbios.   
 > The Type part gets copied to Generic -> SystemProductName.   
@@ -38,7 +38,7 @@ If you still have issues, don't hesitate to open an issue here.
 ---
 ### Fixes:
 
-If your trackpad doesn't seem to work or even get detected, add the .aml files found in the Extras/Trackpad fix directory to EFI > OC > ACPI, and copy the Add and Patch values from the included patches.plist file in the directory to your config.plist file (ACPI > Add and ACPI > Patch).
+If your trackpad doesn't seem to work or even get detected, add the .aml files found in the Extras/Trackpad fix directory to EFI > OC > ACPI, and copy the Add and Patch values from the included patches.plist file in the directory to your config.plist file (ACPI > Add and ACPI > Patch). (Trust me. This was hard to figure out.)
 
 ---
 ### How to update macOS:
