@@ -22,13 +22,8 @@ The SmUUID part gets copied to Generic -> SystemUUID.
 You'll probably need to recreate some ACPI patches:
 - DMAR.aml - **You 100% need to recreate this!** It needs to be recreated every time you change a hardware (Fix DMAR)
 - SSDT-HPET.aml (FixHPET)
-- SSDT-XOSI.aml (XOSI)
 
 Recreate them using [SSDTTime](https://github.com/corpnewt/SSDTTime). Download, start, then first choose *Dump the current system's ACPI tables*. After that, choose the options in the brackets found in the list above! Then copy the files to EFI/OC/ACPI.
-
-If you don't have a thunderbolt controller, remove SSDT-TB3.aml from ACPI folder, and remove its entry from config.plist > ACPI > Add. It should be the 10th entry.
-
-If you have an unsupported NVMe (for example SK Hynix PC711; you'll know because it causes a panic), add SSDT-DISABLE-NVME-SLOTX.aml (where X is the NVMe slot which the unsupported drive is in) from the Extras/NVMe disable directory here to EFI > OC > ACPI and copy the corresponding Add value from the included patches.plist file in the directory to config.plist > ACPI > Add. It will fully disable that drive in macOS. You 100% won't be able to use it in macOS!
 
 After installing macOS, set up [ComboJack](https://github.com/hackintosh-stuff/ComboJack).
 
@@ -38,7 +33,14 @@ If you still have issues, don't hesitate to open an issue here.
 ---
 ### Fixes:
 
+If you don't have a thunderbolt controller, remove SSDT-TB3.aml from ACPI folder, and remove its entry from config.plist > ACPI > Add. It should be the 10th entry.
+
+If you have an unsupported NVMe (for example SK Hynix PC711; you'll know because it causes a panic), add SSDT-DISABLE-NVME-SLOTX.aml (where X is the NVMe slot which the unsupported drive is in) from the Extras/NVMe disable directory here to EFI > OC > ACPI and copy the corresponding Add value from the included patches.plist file in the directory to config.plist > ACPI > Add. It will fully disable that drive in macOS. You 100% won't be able to use it in macOS!
+
 If your trackpad doesn't seem to work or even get detected, add the .aml files found in the Extras/Trackpad fix directory to EFI > OC > ACPI, and copy the Add and Patch values from the included patches.plist file in the directory to your config.plist file (ACPI > Add and ACPI > Patch). (Trust me. This was hard to figure out.)
+
+If you want to use AOAC (Low Power S0 Idle), remove these SSDTs from ACPI folder and config.plist > ACPI > Add: SSDT-S3-ENABLE.aml and SSDT-NameS0-disable.aml and remove the rename _S0 to XS0 patch from config.plist > ACPI > Patch. Then add the SSDTs from Extras/AOAC sleep fix to OC/ACPI and add the values from Extras/AOAC sleep fix/patches.plist to your config.plist.   
+This sleep has a problem in macOS: It can only be woken up by USB devices. The built-in keyboard, opening the lid, and the power button can't wake it up for some reason.
 
 ---
 ### How to update macOS:

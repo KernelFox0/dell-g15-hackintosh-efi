@@ -88,6 +88,22 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Enable S3 sleep mode</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-S3-Enable.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Add back Low power S0 Idle support on non macOS OS</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-NameS0-disable.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Fix trackpads by enabling it in ACPI</string>
 				<key>Enabled</key>
 				<true/>
@@ -263,6 +279,36 @@
 				<data>AAAAAA==</data>
 				<key>Replace</key>
 				<data>IgAAeQA=</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>AAAAAA==</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>Rename _S0 to XS0 to disable AOAC sleep</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X1MwXw==</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data>AAAAAA==</data>
+				<key>Replace</key>
+				<data>WFMwXw==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
