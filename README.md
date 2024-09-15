@@ -46,6 +46,8 @@ If you notice some Dell related tables not loading on startup, you can add the A
 
 If you have long boot times and no graphics acceleration after boot, remove the igfxfw property from config.plist > DeviceProperties > PciRoot(0x0)/Pci(0x2,0x0). This will disable Apple GuC Firmware loading on the iGPU and your system should boot normally, but you will have less performance and DRM playback will break!
 
+There are tools in this EFI for unlocking CFG lock (MSR 0xE2 Register write). If you don't know what this is all about, you probably shouldn't do that. It doesn't make much difference, anyways.
+
 __Remember to change config_update.plist every time you change something in config.plist!__
 
 ---
