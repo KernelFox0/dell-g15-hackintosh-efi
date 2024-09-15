@@ -24,14 +24,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Load fake EC and USB power properties</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-EC-USBX-LAPTOP.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Allow XCPM to manage CPU power management</string>
 				<key>Enabled</key>
 				<true/>
@@ -40,11 +32,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Re-enables old RTC clock to fix system clock</string>
+				<string>Load fake EC and USB power properties</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-AWAC.aml</string>
+				<string>SSDT-EC-USBX-LAPTOP.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -52,7 +44,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-dGPU-Off.aml</string>
+				<string>SSDT-NoHybGfx.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -61,6 +53,14 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-PNLF.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Re-enables old RTC clock to fix system clock</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-AWAC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
