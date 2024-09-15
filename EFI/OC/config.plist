@@ -475,11 +475,45 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>disable-gpu</key>
+				<data>AQAAAA==</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+			<dict>
+				<key>acpi_path</key>
+				<string>\_SB.PCI0.HDEF</string>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,3</string>
+				<key>device_type</key>
+				<string>Multimedia audio controller</string>
+				<key>model</key>
+				<string>Comet Lake PCH cAVS ALC295</string>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>layout-id</key>
+				<data>DQAAAA==</data>
+				<key>alc-delay</key>
+				<integer>1000</integer>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key>acpi_path</key>
+				<string>\_SB.PCI0.IGPU</string>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,2,0</string>
+				<key>device_type</key>
+				<string>Intel Comet Lake-H GT2 iGPU controller</string>
+				<key>model</key>
+				<string>Intel UHD Graphics 630</string>
+				<key>rebuild-device-tree</key>
+				<data>AQAAAA==</data>
 				<key>AAPL,ig-platform-id</key>
 				<data>CQClPg==</data>
-				<key>enable-backlight-registers-fix</key>
+				<key>igfxfw</key>
+				<data>AgAAAA==</data>
+				<key>rps-control</key>
 				<data>AQAAAA==</data>
 				<key>enable-backlight-registers-alternative-fix</key>
 				<data>AQAAAA==</data>
@@ -489,18 +523,8 @@
 				<data>AwAAAA==</data>
 				<key>backlight-smoother-lowerbound</key>
 				<data>9AEAAA==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>disable-gpu</key>
-				<data>AQAAAA==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
-			<dict>
-				<key>layout-id</key>
-				<data>DQAAAA==</data>
-				<key>alc-delay</key>
-				<integer>1000</integer>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
 			</dict>
 		</dict>
 		<key>Delete</key>

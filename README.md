@@ -44,6 +44,8 @@ This sleep has a problem in macOS: It can only be woken up by USB devices. The b
 
 If you notice some Dell related tables not loading on startup, you can add the ACPI tables from Extras/Native ACPI fixes to OC > ACPI and add the patches.plist entries to your config.plist. This will fix loading the tables but it has no effect on how the system runs.
 
+If you have long boot times and no graphics acceleration after boot, remove the igfxfw property from config.plist > DeviceProperties > PciRoot(0x0)/Pci(0x2,0x0). This will disable Apple GuC Firmware loading on the iGPU and your system should boot normally, but you will have less performance and DRM playback will break!
+
 __Remember to change config_update.plist every time you change something in config.plist!__
 
 ---
