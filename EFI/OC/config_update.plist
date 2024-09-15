@@ -126,6 +126,22 @@
 				<key>Path</key>
 				<string>SSDT-SBUS-MCHC.aml</string>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Add fake Apple DMAC, PMCR and MEM2 devices</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-DMAC-PMCR-MEM2.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Add fake Apple ARTC, FWHD and XSPI devices</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-ARTC-FWHD-XSPI.aml</string>
+			</dict>
 		</array>
 		<key>Delete</key>
 		<array>
