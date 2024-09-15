@@ -9,9 +9,9 @@ Made for Intel Core i7-10870H CPU, other 10th gens will probably work. 11th gen 
 ---
 ### How to set up:
 
-The dGPU needs to be disabled. My laptop has an RTX 3060 GPU. The ACPI path might be different with other cards. Replace the ACPI path with yours in SSDT-dGPU-Off.aml.   
+The dGPU needs to be disabled. My laptop has an RTX 3060 GPU. The ACPI path might be different with other cards, but if it's Nvidia it's likely the same. Replace the ACPI path with yours in SSDT-dGPU-Off.aml.   
 
-If you have more than 16 GBs of RAM, enable the DisableIoMapperMapping quirk (**Not DisableIoMapper!**) in config.plist > Kernel > Quirks
+If you have more than 16 GBs of RAM, you don't need to do anything special, since DisableIoMapperMapping has to be enabled on every system. If it's not enabled it can cause problems like graphical glitches and kernel panics.
 
 You'll need to generate new SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Use MacBookPro16,4 smbios.   
 > The Type part gets copied to Generic -> SystemProductName.   
