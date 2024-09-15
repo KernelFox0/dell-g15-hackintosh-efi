@@ -88,6 +88,14 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Enable Ambient Light Sensor found in system DSDT</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-ALSD.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Enable S3 sleep mode</string>
 				<key>Enabled</key>
 				<true/>
