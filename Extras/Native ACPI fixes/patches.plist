@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACPI</key>
+	<dict>
+		<key>Add</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Fix ACPI errors in DellRtd3</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-DellRtd3.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Fix ACPI errors in xh_Dell_</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-XH-Dell.aml</string>
+			</dict>
+		</array>
+		<key>Delete</key>
+		<array>
+			<dict>
+				<key>All</key>
+				<true/>
+				<key>Comment</key>
+				<string>Drop system DellRtd3 SSDT to load fixed one</string>
+				<key>Enabled</key>
+				<true/>
+				<key>OemTableId</key>
+				<data>RGVsbFJ0ZDM=</data>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>U1NEVA==</data>
+			</dict>
+			<dict>
+				<key>All</key>
+				<true/>
+				<key>Comment</key>
+				<string>Drop system xh_Dell_ SSDT to load fixed one</string>
+				<key>Enabled</key>
+				<true/>
+				<key>OemTableId</key>
+				<data>eGhfRGVsbF8=</data>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>U1NEVA==</data>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

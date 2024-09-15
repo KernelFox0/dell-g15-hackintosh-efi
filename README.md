@@ -42,6 +42,10 @@ If your trackpad doesn't seem to work or even get detected, add the .aml files f
 If you want to use AOAC (Low Power S0 Idle), remove these SSDTs from ACPI folder and config.plist > ACPI > Add: SSDT-S3-ENABLE.aml and SSDT-NameS0-disable.aml and remove the rename _S0 to XS0 patch from config.plist > ACPI > Patch. Then add the SSDTs from Extras/AOAC sleep fix to OC/ACPI and add the values from Extras/AOAC sleep fix/patches.plist to your config.plist.   
 This sleep has a problem in macOS: It can only be woken up by USB devices. The built-in keyboard, opening the lid, and the power button can't wake it up for some reason.
 
+If you notice some Dell related tables not loading on startup, you can add the ACPI tables from Extras/Native ACPI fixes to OC > ACPI and add the patches.plist entries to your config.plist. This will fix loading the tables but it has no effect on how the system runs.
+
+__Remember to change config_update.plist every time you change something in config.plist!__
+
 ---
 ### How to update macOS:
 
