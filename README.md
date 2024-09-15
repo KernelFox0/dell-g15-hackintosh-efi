@@ -48,6 +48,8 @@ If you have long boot times and no graphics acceleration after boot, remove the 
 
 There are tools in this EFI for unlocking CFG lock (MSR 0xE2 Register write). If you don't know what this is all about, you probably shouldn't do that. It doesn't make much difference, anyways.
 
+If you want to name all devices in your laptop, add the entries from Extras/PCI Device Naming/patches.plist to your config.plist > DeviceProperties > Add. It doesn't make a difference, but you will see system devices in System Information > PCI. If your device isn't a Dell G15 5510 with an i7-10870H and RTX 3060, you shouldn't use this. It's a PCI dumb with Hackintool, but with the iGPU, dGPU and Audio dismissed as those patches already exist.
+ 
 __Remember to change config_update.plist every time you change something in config.plist!__
 
 ---
